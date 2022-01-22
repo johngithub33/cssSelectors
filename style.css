@@ -3,6 +3,12 @@
 
 
 /* https://www.w3schools.com/cssref/css_selectors.asp */
+/* basics:
+    classes all, classes descendent
+    <, +, ~
+    [html attribute=value]
+    : pseudo classes
+*/
 
 
 /* BOTH: Selects all elements with both name1 and name2 set within its class attribute */
@@ -41,7 +47,7 @@
 
     /* PRECEEDING (NOT a child though)*/
     /* p ~ ul: Selects every <ul> element that is preceded by a <p> element */
-    /* example: every section preceeded by a div */
+    /* example: every h1 preceeded by a div */
     div ~ h1{
         background-color: pink;
     }
@@ -51,19 +57,43 @@
     /* 
         [attribute=value] 	[target=_blank] 	Selects all elements with target="_blank"
         [attribute~=value] 	[title~=flower] 	Selects all elements with a title attribute containing the word "flower"
-        [attribute|=value] 	[lang|=en] 	Selects all elements with a lang attribute value equal to "en" or starting with "en-"
+        [attribute|=value] 	[lang|=en] 	        Selects all elements with a lang attribute value equal to "en" or starting with "en-"
         [attribute^=value] 	a[href^="https"] 	Selects every <a> element whose href attribute value begins with "https"
         [attribute$=value] 	a[href$=".pdf"] 	Selects every <a> element whose href attribute value ends with ".pdf"
         [attribute*=value] 	a[href*="w3schools"] 	Selects every <a> element whose href attribute value contains the substring "w3schools"
      */
+
+    /* attribute selector */
     [type]{
         display: block;
         background-color: orange;
     }
 
+    /* attribute's value */
     [value="second trial text"]
     {
         display: block;
         background-color: blue;
     }
 
+
+    /* PSEUDO CLASSES */
+    /* keyword added to a selector that specifies a special state of the selected element(s).  */
+    /* full list: https://www.w3schools.com/cssref/css_selectors.asp */
+
+    div:first-child{
+        font-style: italic;
+    }
+
+    div::after{
+        /* font-size: 50px;
+        content: 'inserted with css' */
+    }
+
+    input.focus:focus{
+        background: blueviolet;
+    }
+
+    h2.hover:hover{
+        background: blueviolet
+    }
