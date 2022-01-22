@@ -1,0 +1,69 @@
+
+
+
+
+/* https://www.w3schools.com/cssref/css_selectors.asp */
+
+
+/* BOTH: Selects all elements with both name1 and name2 set within its class attribute */
+    .class1.class2{
+        font-size: 20px;
+        color: red;
+    }
+
+
+
+/* DESECNDENT */
+
+    /* Selects all elements with name2 that is a descendant of an element with name1 */
+    .class1 .class2{
+        font-size: 20px;
+        color: blue;
+    }
+
+    /* Selects all <p> elements inside <div> elements */
+    .class1 p{
+        color: green;
+    }
+
+
+/* PARENT >, AFTER +, PRECEEDING ~ */
+
+    /* parent > child */
+    section > h3{
+        font-size: 50px;
+    }
+
+    /* first element + after first element */
+    .before + .after{
+        color: purple;
+    }
+
+    /* PRECEEDING (NOT a child though)*/
+    /* p ~ ul: Selects every <ul> element that is preceded by a <p> element */
+    /* example: every section preceeded by a div */
+    div ~ h1{
+        background-color: pink;
+    }
+
+
+    /* ATTRIBUTE selectors (what's inside an HTML element tag) */
+    /* 
+        [attribute=value] 	[target=_blank] 	Selects all elements with target="_blank"
+        [attribute~=value] 	[title~=flower] 	Selects all elements with a title attribute containing the word "flower"
+        [attribute|=value] 	[lang|=en] 	Selects all elements with a lang attribute value equal to "en" or starting with "en-"
+        [attribute^=value] 	a[href^="https"] 	Selects every <a> element whose href attribute value begins with "https"
+        [attribute$=value] 	a[href$=".pdf"] 	Selects every <a> element whose href attribute value ends with ".pdf"
+        [attribute*=value] 	a[href*="w3schools"] 	Selects every <a> element whose href attribute value contains the substring "w3schools"
+     */
+    [type]{
+        display: block;
+        background-color: orange;
+    }
+
+    [value="second trial text"]
+    {
+        display: block;
+        background-color: blue;
+    }
+
